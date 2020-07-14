@@ -4,11 +4,19 @@ spring:
   application:
     name: Payment
   datasource:
-#    type: com.alibaba.druid.pool.DruidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT
     username: root
     password: 19980120
+
+eureka:
+  client:
+    register-with-eureka: true  #标识是否将自己注册到注册中心
+    fetch-registry: true #是否从注册中心抓取已有的注册信息  单节点 没有必要 集群必须配合ribbon使用负载均衡
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
