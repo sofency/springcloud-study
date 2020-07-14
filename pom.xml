@@ -13,6 +13,8 @@
         <module>Order</module>
         <module>Entities</module>
         <module>cloud_eureka_server</module>
+        <module>cloud_eureka_server7002</module>
+        <module>Payment8002</module>
     </modules>
     <!--总的父工程-->
 

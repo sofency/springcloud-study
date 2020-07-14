@@ -7,8 +7,12 @@
     <file url="file://$PROJECT_DIR$/Order/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Payment/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Payment/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Payment8002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Payment8002/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eureka_server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eureka_server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_eureka_server7002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_eureka_server7002/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

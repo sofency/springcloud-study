@@ -12,6 +12,11 @@
     <artifactId>Order</artifactId>
 
     <dependencies>
+        <!--将服务提供者注册到eureka服务中心-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
         <!--引入自己的jar的maven依赖-->
         <dependency>
             <groupId>org.example</groupId>
