@@ -43,6 +43,51 @@ EurekaClient 通过注册中心进行访问
 
 ```
 
-##### eureka集群环境搭建步骤
+##### eureka自我保护
+
+```$xslt
+导致自我保护的原因: 某一时刻一个微服务不能用了,eureka不会立即清理,依旧会对该微服务的信息进行保存
+设计哲学, 宁可保留错误的服务注册信息,也不盲目注销任何可能健康的服务实例.
+
+注册中心如何禁用自我保护模式
+eureka.server.enable-self-preservation:false
+eureka.server.enable-interval-time-in-ms:2000
+
+服务提供方向注册中心发送心跳的频率设置
+客户端向服务端发送心跳的时间间隔
+eureka.instance.lease-renewal-interval-in-seconds=30
+# eureka服务端在收到最后一次心跳后等待事件上限 单位时间为秒  超时剔除服务
+eureka.instance.lease-expiration-duration-in-seconds=90
+```
+
+##### consul服务注冊中心筆記
+```$xslt
+从官网下载consul
+下载后只有一个consul.exe文件,此时双击后 在同级目录下打开cmd  运行consul --version  如果显示版本说明安装成功
+运行consul   consul agent -dev  
+然后在浏览器输入 http://localhost:8500
+```
 
 
+#####技术积累点
+```$xslt
+在springboot项目中如果没有配置数据库的相关操作,需要在springbootApplication的注解中添加exclude= {DataSourceAutoConfiguration.class}
+即@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+
+CAP
+C: consistency 强一致性  
+A: availabiltily 可用性   
+P  Partition tolerance  分区容错性
+
+```
+
+##### Ribbon负载均衡
+```$xslt
+负载均衡  简单的来说就是将用户的请求平摊的分配到多个服务上,从而达到系统的HA
+常见的负载均衡有软件 Nginx LVS
+
+Ribbon本地负载均衡  VS Nginx 服务端负载均衡区别
+Nginx 服务端负载均衡 客户端所有的请求都会交给nginx ,然后nginx实现转发请求, 即负载均衡是由服务端实现的
+
+Ribbon本地负载均衡,在调用微服务接口时候,会在注册中心上获取注册信息服务列表之后缓存到JVM本地,从而实现本地RPC远程服务调用技术
+```

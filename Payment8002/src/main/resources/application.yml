@@ -2,7 +2,7 @@ server:
   port: 8002
 spring:
   application:
-    name: Payment
+    name: Payment-service
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -16,8 +16,10 @@ eureka:
     fetch-registry: true #是否从注册中心抓取已有的注册信息  单节点 没有必要 集群必须配合ribbon使用负载均衡
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #将服务注册到注册中心中
-
+  instance:
+    instance-id: payment8002
+    prefer-ip-address: true  #注册中心显示ip
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.sofency.top.entities
+  type-aliases-package: com.sofency.com.sofency.top.entities

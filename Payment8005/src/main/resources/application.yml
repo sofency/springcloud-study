@@ -1,0 +1,18 @@
+server:
+  port: 8005
+
+# 配置zookeeper
+
+spring:
+  application:
+    name: Payment-service
+  cloud:
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+
+
+
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.sofency.com.sofency.top.entities

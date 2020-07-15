@@ -7,8 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="OrderZookeeper" />
         <module name="cloud_eureka_server" />
+        <module name="Payment8005" />
+        <module name="Payment8003" />
         <module name="Payment8002" />
+        <module name="OrderConsul" />
         <module name="Payment" />
         <module name="cloud_eureka_server7002" />
         <module name="Order" />

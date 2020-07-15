@@ -1,8 +1,11 @@
 package com.sofency.top.controller;
 
+import cn.hutool.log.Log;
 import com.sofency.top.entities.CommonResult;
 import com.sofency.top.entities.Payment;
-import lombok.Value;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,10 +21,12 @@ import javax.annotation.Resource;
  * @description
  */
 @RestController
+@Slf4j
 public class OrderController {
-    public static final String PAYMENT_URL="http://PAYMENT";
+    public static final String PAYMENT_URL="http://PAYMENT-SERVICE";
     @Resource
     private RestTemplate restTemplate;
+
 
     @PostMapping("/consumer/payment/create")
     public CommonResult<Payment> create(Payment payment){

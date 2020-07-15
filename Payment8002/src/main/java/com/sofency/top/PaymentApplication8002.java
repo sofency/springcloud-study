@@ -11,7 +11,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @package IntelliJ IDEA
  * @description
  */
-@MapperScan("com.sofency.top.dao")
+@MapperScan("com.sofency.com.sofency.top.dao")
 @SpringBootApplication
 @EnableEurekaClient //注册到注册中心
 public class PaymentApplication8002 {

@@ -6,7 +6,12 @@ import com.sofency.top.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author sofency
@@ -22,6 +27,9 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
+
+    @Resource
+    private DiscoveryClient discoveryClient;//服务发现
 
     @Autowired
     public PaymentController(PaymentService paymentService){
@@ -53,5 +61,19 @@ public class PaymentController {
             return new CommonResult(404,"查询失败");
         }
 
+    }
+
+
+    @GetMapping("/payment/discovery")
+    public Object discovery(){
+        List<String> services = discoveryClient.getServices();
+        services.forEach(service->{
+            log.info("element****"+service);
+        });
+        List<ServiceInstance> payment = discoveryClient.getInstances("PAYMENT");
+        payment.forEach(service->{
+            log.info("service****"+service.getInstanceId()+"\t"+service.getHost()+"\t"+service.getPort());
+        });
+        return services;
     }
 }

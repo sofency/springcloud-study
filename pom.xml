@@ -15,6 +15,10 @@
         <module>cloud_eureka_server</module>
         <module>cloud_eureka_server7002</module>
         <module>Payment8002</module>
+        <module>Payment8003</module>
+        <module>OrderZookeeper</module>
+        <module>Payment8005</module>
+        <module>OrderConsul</module>
     </modules>
     <!--总的父工程-->
 
