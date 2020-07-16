@@ -1,0 +1,20 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: true  #标识是否将自己注册到注册中心
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka #将服务注册到注册中心中
+spring:
+  application:
+    name: Feign
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+# 日志增强
+logging:
+  level:
+    # feign日志以什么级别监控那个接口
+    com.sofency.top.services.PaymentFeignService: debug

@@ -93,4 +93,25 @@ Ribbon本地负载均衡,在调用微服务接口时候,会在注册中心上获
 默认的负载均衡使用就是 RestTemplate来进行调用服务的
 ```
 
+##### openFeign的工作原理
+```$xslt
+首先在消费方定义调用服务方的接口,并且在接口上加上@FeignClient(value="注册中心")
+接口的定义就是服务方对外暴露的接口
+注意Feign 依赖于eureka的注册中心 所以要导入依赖
+<!--将服务提供者注册到eureka服务中心-->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+然后在消费方定义消费的接口  并将服务方的接口注入到消费方的controller中
+
+并且在启动类上加上@EnableFeignClients注解
+
+
+openfeign超时控制
+注意对ribbon进行控制  openfeign底层使用的就是ribbon  即负载均衡加上restemplate
+
+openfiengn 默认只等待一秒钟 超过一秒钟就报错
+```
+
 

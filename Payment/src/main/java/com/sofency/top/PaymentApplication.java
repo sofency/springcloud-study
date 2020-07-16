@@ -15,7 +15,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @MapperScan("com.sofency.top.dao")
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableEurekaClient //注册到注册中心
 public class PaymentApplication {
     public static void main(String[] args) {
         SpringApplication.run(PaymentApplication.class, args);

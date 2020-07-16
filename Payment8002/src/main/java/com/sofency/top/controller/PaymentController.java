@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import com.sofency.top.service.PaymentService;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author sofency
  * @date 2020/7/12 19:33
@@ -59,5 +61,12 @@ public class PaymentController {
     @GetMapping("/payment/lb")
     public String getPaymentPort(){
         return serverPort;
+    }
+
+
+    @GetMapping("/payment/get/timeout")
+    public CommonResult timeout() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
+        return new CommonResult(200,"插入数据库成功serverPort:"+serverPort);
     }
 }

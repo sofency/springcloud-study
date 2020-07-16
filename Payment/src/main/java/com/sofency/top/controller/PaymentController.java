@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author sofency
@@ -81,5 +82,12 @@ public class PaymentController {
     @GetMapping("/payment/lb")
     public String getPaymentPort(){
         return serverPort;
+    }
+
+    //超时
+    @GetMapping("/payment/get/timeout")
+    public CommonResult timeout() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
+        return new CommonResult(200,"插入数据库成功serverPort:"+serverPort);
     }
 }

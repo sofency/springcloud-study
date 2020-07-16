@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Payment8003" />
+        <module name="Order_Openfeign" />
         <module name="cloud_eureka_server" />
         <module name="Payment8005" />
         <module name="OrderZookeeper" />

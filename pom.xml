@@ -19,6 +19,7 @@
         <module>OrderZookeeper</module>
         <module>Payment8005</module>
         <module>OrderConsul</module>
+        <module>Order_Openfeign</module>
     </modules>
     <!--总的父工程-->
 
