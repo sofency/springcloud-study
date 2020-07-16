@@ -88,6 +88,9 @@ P  Partition tolerance  分区容错性
 
 Ribbon本地负载均衡  VS Nginx 服务端负载均衡区别
 Nginx 服务端负载均衡 客户端所有的请求都会交给nginx ,然后nginx实现转发请求, 即负载均衡是由服务端实现的
-
 Ribbon本地负载均衡,在调用微服务接口时候,会在注册中心上获取注册信息服务列表之后缓存到JVM本地,从而实现本地RPC远程服务调用技术
+
+默认的负载均衡使用就是 RestTemplate来进行调用服务的
 ```
+
+

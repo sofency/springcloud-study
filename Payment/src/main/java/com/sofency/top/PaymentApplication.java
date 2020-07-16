@@ -12,7 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @package IntelliJ IDEA
  * @description
  */
-@MapperScan("com.sofency.com.sofency.top.dao")
+@MapperScan("com.sofency.top.dao")
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableEurekaClient //注册到注册中心

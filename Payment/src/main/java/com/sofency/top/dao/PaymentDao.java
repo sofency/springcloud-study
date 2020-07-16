@@ -3,7 +3,6 @@ package com.sofency.top.dao;
 import com.sofency.top.entities.Payment;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Component;
 
 /**
  * @author sofency

@@ -48,10 +48,16 @@ public class PaymentController {
         log.info("*******获取成功,"+payment+"*******");
         if(payment!=null){
             System.out.printf(payment.toString());
-            return new CommonResult(200,"插入数据库成功serverPort:"+serverPort,payment);
+            return new CommonResult(200,"获取数据成功serverPort:"+serverPort,payment);
         }else{
             return new CommonResult(404,"查询失败");
         }
 
+    }
+
+    //使用自己的轮询算法实现负载均衡
+    @GetMapping("/payment/lb")
+    public String getPaymentPort(){
+        return serverPort;
     }
 }
