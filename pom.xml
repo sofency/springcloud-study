@@ -20,6 +20,9 @@
         <module>Payment8005</module>
         <module>OrderConsul</module>
         <module>Order_Openfeign</module>
+        <module>PaymentHystrix</module>
+        <module>OrderFeignHystrix80</module>
+        <module>GateWayDemo</module>
     </modules>
     <!--总的父工程-->
 

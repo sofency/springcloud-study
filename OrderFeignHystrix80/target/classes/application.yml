@@ -1,0 +1,19 @@
+server:
+  port: 80
+spring:
+  application:
+    name: Order-hystrix
+eureka:
+  client:
+    register-with-eureka: true  #标识是否将自己注册到注册中心
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka  #将服务注册到注册中心中
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+  ##开启消费方的服务熔断检测
+
+feign:
+  hystrix:
+    enabled: true

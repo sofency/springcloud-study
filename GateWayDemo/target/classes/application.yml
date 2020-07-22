@@ -1,0 +1,26 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: payment_route #路由的id 没有固定的规则 但要求唯一  建议配合服务名
+          #uri http://localhost:8001
+          uri: lb://PAYMENT-SERVICE # 匹配后提供服务的路由地址 在网关层实现负载均衡
+          predicates:
+            - Path=/payment/get/**   # 路径相匹配后提供服务的路由地址
+            - Cookie=username,sofency
+eureka:
+  instance:
+    hostname: gateway-service
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://eureka7001.com:7001/eureka

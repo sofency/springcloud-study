@@ -1,0 +1,11 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: Payment-hystrix
+eureka:
+  client:
+    register-with-eureka: true  #标识是否将自己注册到注册中心
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka  #将服务注册到注册中心中
+  #      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #将服务注册到注册中心中
